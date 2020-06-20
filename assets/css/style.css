@@ -1,14 +1,49 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 :root {
     --primary: rgba(216, 93, 79, 0.836);
     --secondary: salmon;
 }
 
 /* Header Style Start */
-/* Include 'view high scores' and timer */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+header h1 {
+    
+    display: inline;
+    font-size: 1.5em;
+    font-weight: lighter;
+    color: var(--secondary);
+}
+
+.timer {
+    color: black;
+}
 /* Give 'view high scores' secondary color */
 /* Header Style End */
 
 /* Form Style Start */
 /* Give buttons primary color */
-/* Use Grid to stack question on top of buttons, and 'correct/wrong' beneath buttons */
+
+main {
+    text-align: center;
+}
+
+p {
+    font-weight: lighter;
+    line-height: 1.5;
+}
+
+.btn {
+    border: none;
+    background: var(--primary);
+    font-size: 2rem;
+    border-radius: 12px;
+}
 /* Form Style End */
