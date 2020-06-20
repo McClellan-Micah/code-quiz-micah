@@ -13,24 +13,24 @@ header {
     justify-content: space-between;
     padding: 10px 20px;
 }
-
+/*find way to take blue off of 'view high scores'*/
 header h1 {
-    
     display: inline;
     font-size: 1.5em;
     font-weight: lighter;
     color: var(--secondary);
 }
 
+a {
+    text-decoration: none;
+}
+
 .timer {
     color: black;
 }
-/* Give 'view high scores' secondary color */
 /* Header Style End */
 
 /* Form Style Start */
-/* Give buttons primary color */
-
 main {
     text-align: center;
 }
