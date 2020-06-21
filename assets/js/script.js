@@ -21,7 +21,7 @@ var questions = [
     choice2: 'Cascading Style Sheets',
     choice3: 'HyperText Markup Language',
     choice4: 'Document Object Model',
-    answer: 'Document Object Model'}
+    answer: 'Document Object Model'} // compare to the string OR the value of the button
 ]
 
 //use getElementById() and querySelector()
@@ -51,21 +51,24 @@ function startGame() {
         //but here we are removig the hidden  class and setting
         //the text for the question 
         question.textContent = questions[i].question
-            choices[0].classList.remove("hidden");
-            choices[1].classList.remove("hidden");
-            choices[2].classList.remove("hidden");
-            choices[3].classList.remove("hidden");
+            for (x=0; x < 4; x++) {
+                choices[x].classList.remove("hidden")
+            }
        
             choice1.textContent = questions[i].choice1
             choice2.textContent = questions[i].choice2
             choice3.textContent = questions[i].choice3
             choice4.textContent = questions[i].choice4
+
+        //if there is a wrong answer you are going to take variable for timer like startTimer
+        //then you are going to subtract from startTimer.
+
             i++
         } else {
             for (x=0; x < 4; x++) {
                 choices[x].classList.add("hidden")
-        }
-        question.textContent = "No more questions"
+            }
+        question.textContent = "Finito"
         }
     }
 }
