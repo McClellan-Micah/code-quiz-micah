@@ -1,14 +1,62 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 :root {
-    --primary: rgba(216, 93, 79, 0.836);
+    --primary: rgba(218, 51, 33, 0.795);
     --secondary: salmon;
 }
 
 /* Header Style Start */
-/* Include 'view high scores' and timer */
-/* Give 'view high scores' secondary color */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+/*find way to take blue off of 'view high scores'*/
+header h1 {
+    display: inline;
+    font-size: 1.5em;
+    font-weight: lighter;
+    color: var(--secondary);
+}
+
+a {
+    text-decoration: none;
+}
+
+.timer {
+    color: black;
+}
 /* Header Style End */
 
 /* Form Style Start */
-/* Give buttons primary color */
-/* Use Grid to stack question on top of buttons, and 'correct/wrong' beneath buttons */
+main {
+    text-align: center;
+}
+
+.page-title {
+    font-size: 40px;
+}
+
+p {
+    font-weight: lighter;
+    line-height: 1.5;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    background: var(--primary);
+    color: white;
+    padding: 10px 15px;
+    font-size: 2rem;
+    border-radius: 12px;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+    box-shadow: 0 2px var(--secondary);
+    top: -2px;
+  }
 /* Form Style End */
