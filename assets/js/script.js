@@ -14,7 +14,14 @@ var questions = [
     choice2: 'Cascading Style Sheets',
     choice3: 'HyperText Markup Language',
     choice4: 'Document Object Model',
-    answer: 'Cascading Style Sheets'}
+    answer: 'Cascading Style Sheets'},
+
+    { question: 'What is DOM?',
+    choice1: 'JavaScript',
+    choice2: 'Cascading Style Sheets',
+    choice3: 'HyperText Markup Language',
+    choice4: 'Document Object Model',
+    answer: 'Document Object Model'}
 ]
 
 //use getElementById() and querySelector()
