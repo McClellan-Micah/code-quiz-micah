@@ -25,9 +25,10 @@ a {
     text-decoration: none;
 }
 
-.timer {
+#timer {
     color: black;
 }
+
 /* Header Style End */
 
 /* Form Style Start */
