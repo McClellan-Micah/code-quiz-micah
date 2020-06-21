@@ -53,4 +53,10 @@ p {
     font-size: 2rem;
     border-radius: 12px;
 }
+
+.btn:hover {
+    background-color: var(--secondary);
+    box-shadow: 0 2px var(--secondary);
+    top: -2px;
+  }
 /* Form Style End */
