@@ -58,5 +58,19 @@ p {
     background-color: var(--secondary);
     box-shadow: 0 2px var(--secondary);
     top: -2px;
-  }
+}
+
+.choice {
+    outline: none;
+    border: none;
+    background: var(--primary);
+    color: white;
+    padding: 10px 15px;
+    font-size: 2rem;
+    border-radius: 12px;
+}
+
+.hidden {
+    display: none;
+}
 /* Form Style End */
