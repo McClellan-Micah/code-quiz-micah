@@ -8,8 +8,8 @@
 //write functions
 function myTimer() {
     //set variables
-    var startTime = 5;
-    var myInterval = 3000;
+    var startTime = 10;
+    var myInterval = 1000;
     var timer = document.getElementById("timer");
 
     //The set interval takes two arguments,  the function and an interval
@@ -30,6 +30,8 @@ function myTimer() {
         }
     }
 }
+
+myTimer()
     //startGame()
     //setQuestion()
 
