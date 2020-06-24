@@ -3,6 +3,7 @@ var button = document.getElementById("startButton")
 button.addEventListener("click", startGame)
 var intro = document.getElementById("intro")
 var title = document.getElementById("title")
+//var choice = document.getElementById("choice")
 
 var questions = [
     { question: 'What is HTML?',
@@ -58,6 +59,10 @@ function startGame() {
     button.style.display = "none";
     title.style.display = "none";
     intro.style.display = "none";
+    choice1.style.display = "block";
+    choice2.style.display = "block";
+    choice3.style.display = "block";
+    choice4.style.display = "block";
     function setQuestion() {
     
         //use if statement so question only pops up if there are more questions

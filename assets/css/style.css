@@ -33,6 +33,11 @@ main {
     font-size: 40px;
 }
 
+/* styling to hide buttons from title-page*/
+.choice {
+    display: none;
+}
+
 p {
     font-weight: lighter;
     line-height: 1.5;
