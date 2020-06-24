@@ -95,3 +95,5 @@ function startGame() {
     setQuestion();
     button.onclick = startGame;
 }
+//event listener for each choice
+//function compareAnswer() fires any time you press any 4 answer. when click one it fires and compares text from button blicked to the answer (if statement).

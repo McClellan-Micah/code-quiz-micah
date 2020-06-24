@@ -13,7 +13,7 @@ header {
     justify-content: space-between;
     padding: 10px 20px;
     display: inline;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: lighter;
     color: var(--secondary);
 }
