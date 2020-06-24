@@ -11,21 +11,25 @@
     <header>
         <!-- "View High Scores top left corner" -->
         <h1>
-            <a href="#">View High Scores</a>
+            View High Scores
         </h1>
         <!-- "Timer begin 0 top right corner" -->
-        <h1 class="timer">Time:</h1>
-        <h1 id="timer"></h1>
-        
+        <h1 class="timer" id="timer"></h1>
     </header>
     <main>
         <!-- Quiz title -->
-        <h1 class="page-title">
+        <h1 class="page-title" id="title">
             Coding Quiz Challenge
         </h1>
         <!-- Quiz description -->
+        <div id="question"></div>
+        <div id="choice1" class="choice"></div>
+        <div id="choice2" class="choice"></div>
+        <div id="choice3" class="choice"></div>
+        <div id="choice4" class="choice"></div>
+
         <h2>
-            <p class = "">
+            <p id = "intro">
                 Think you know your code? Give it a go and find out!
                 <br />
                 Answer the code-related questions and beat the clock! 
@@ -35,7 +39,7 @@
         </h2>
         <!-- Start button -->
         <div class="">
-            <button class="btn" id="" type="submit">Start Quiz</button>
+            <button class="btn" id="startButton" type="submit">Start Quiz</button>
         </div>
     </main>
     

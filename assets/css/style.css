@@ -12,23 +12,16 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-}
-/*find way to take blue off of 'view high scores'*/
-header h1 {
     display: inline;
-    font-size: 1.5em;
+    font-size: 16px;
     font-weight: lighter;
     color: var(--secondary);
 }
 
-a {
-    text-decoration: none;
-}
-
 .timer, #timer {
     color: black;
+    font-size: 26px;
 }
-
 /* Header Style End */
 
 /* Form Style Start */
