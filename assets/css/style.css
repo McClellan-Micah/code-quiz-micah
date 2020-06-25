@@ -61,7 +61,7 @@ p {
 
 /* styling to hide buttons from title-page*/
 .choice {
-    /*display: none;*/
+    display: none;
     outline: none;
     border: none;
     background: var(--primary);
