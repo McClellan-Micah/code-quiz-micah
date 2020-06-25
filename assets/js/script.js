@@ -1,6 +1,6 @@
 var timerEl = document.getElementById("timer")
 var button = document.getElementById("startButton")
-button.addEventListener("click", startGame)
+
 var intro = document.getElementById("intro")
 var title = document.getElementById("title")
 //var choice = document.getElementById("choice")
@@ -38,10 +38,11 @@ var choices = document.querySelectorAll(".choice")
 
 var i = 0
 
+var startTime = 75;
+
 //write functions
 function myTimer() {
     //set variables
-    var startTime = 75;
     var timeInterval = setInterval(() => {
         timerEl.textContent = "Time left: " + startTime;
         if (startTime === 0) {
@@ -68,48 +69,52 @@ function startGame() {
         //use if statement so question only pops up if there are more questions
         if (i < questions.length) {
     
-        //This could use with a loop to make it DRY-er!
-        //but here we are removig the hidden  class and setting
-        //the text for the question 
+        //here we are removing the hidden class and setting the text for the question 
         question.textContent = questions[i].question
             for (x=0; x < 4; x++) {
-                choices[x].classList.remove("hidden")
+                choices[x].classList.remove("hidden");
             }
             
-            choice1.textContent = questions[i].choice1
-            // console.log(questions[i].choice1);
-
-            // //Try to target the 2D array.
-            // questions[i][0];
-            // questions[i][1];
-            choice2.textContent = questions[i].choice2
-            choice3.textContent = questions[i].choice3
-            choice4.textContent = questions[i].choice4
-
-        //if there is a wrong answer you are going to take variable for timer like startTimer
-        //then you are going to subtract from startTimer.
+            choice1.textContent = questions[i].choice1;
+            choice2.textContent = questions[i].choice2;
+            choice3.textContent = questions[i].choice3;
+            choice4.textContent = questions[i].choice4;
 
             i++
         } else {
             for (x=0; x < 4; x++) {
-                choices[x].classList.add("hidden")
+                choices[x].classList.add("hidden");
             }
-        question.textContent = "Finito"
+        question.textContent = "Finito";
         }
     }
     setQuestion();
     button.onclick = startGame;
 }
-//event listener for each choice 
+
+
 //function compareAnswer() fires any time you press any 4 answer. 
     //when click one it fires and compares text from button blicked to the answer (if statement).
+var answers = document.getElementsByClassName("choice");
+for (let k = 0; k < answers.length; k++) {
+    answers[k].addEventListener("click", function() {
+        //check answer. if right, then move on, else deduct 10 seconds
+        var userValue = event.target.value 
+        var answer = questions[i].answer;
+        if (userValue == answer) {
+            setQuestion();
+            //add to user score
+        } else {
+            startTime = startTime - 10;
+        }
+    })
+}
+
+
+//event listeners
+button.addEventListener("click", startGame)
+//event listers for each choice button
 button.addEventListener("click", choice1)
 button.addEventListener("click", choice2)
 button.addEventListener("click", choice3)
 button.addEventListener("click", choice4)
-
-function compareAnswer() {
-    /*if (//what to write//) {
-        console.log(choice1);
-    }*/
-}

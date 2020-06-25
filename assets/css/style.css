@@ -12,7 +12,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    display: inline;
+    
     font-size: 10px;
     font-weight: lighter;
     color: var(--secondary);
@@ -33,9 +33,9 @@ main {
     font-size: 40px;
 }
 
-/* styling to hide buttons from title-page*/
-.choice {
-    display: none;
+#question {
+    font-size: 36px;
+    font-weight: bold;
 }
 
 p {
@@ -58,4 +58,22 @@ p {
     box-shadow: 0 2px var(--secondary);
     top: -2px;
   }
+
+/* styling to hide buttons from title-page*/
+.choice {
+    /*display: none;*/
+    outline: none;
+    border: none;
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    font-size: 2rem;
+    border-radius: 12px;
+}
+
+.choice:hover {
+    background-color: var(--secondary);
+    box-shadow: 0 2px var(--secondary);
+    top: -2px;
+}
 /* Form Style End */
