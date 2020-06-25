@@ -100,5 +100,16 @@ function startGame() {
     setQuestion();
     button.onclick = startGame;
 }
-//event listener for each choice
-//function compareAnswer() fires any time you press any 4 answer. when click one it fires and compares text from button blicked to the answer (if statement).
+//event listener for each choice 
+//function compareAnswer() fires any time you press any 4 answer. 
+    //when click one it fires and compares text from button blicked to the answer (if statement).
+button.addEventListener("click", choice1)
+button.addEventListener("click", choice2)
+button.addEventListener("click", choice3)
+button.addEventListener("click", choice4)
+
+function compareAnswer() {
+    /*if (//what to write//) {
+        console.log(choice1);
+    }*/
+}
