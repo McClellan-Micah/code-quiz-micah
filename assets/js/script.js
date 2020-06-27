@@ -29,10 +29,10 @@ var questions = [
 ]
 
 var question = document.getElementById("question")
-var choice1 = document.getElementById("choice1")
-var choice2 = document.getElementById("choice2")
-var choice3 = document.getElementById("choice3")
-var choice4 = document.getElementById("choice4")
+// var choice1 = document.getElementById("choice1")
+// var choice2 = document.getElementById("choice2")
+// var choice3 = document.getElementById("choice3")
+// var choice4 = document.getElementById("choice4")
 
 var choices = document.querySelectorAll(".choice")
 
@@ -47,6 +47,7 @@ function myTimer() {
         timerEl.textContent = "Time left: " + startTime;
         if (startTime === 0) {
             timerEl.textContent = "FATALITY"
+            timerEl.style.color = "red";
             clearInterval(timeInterval);
         }
         //Subtracts 1 from the start time
@@ -60,10 +61,11 @@ function startGame() {
     button.style.display = "none";
     title.style.display = "none";
     intro.style.display = "none";
-    choice1.style.display = "block";
-    choice2.style.display = "block";
-    choice3.style.display = "block";
-    choice4.style.display = "block";
+    // choice1.style.display = "block"; 
+    // choice2.style.display = "block";
+    // choice3.style.display = "block";
+    // choice4.style.display = "block";
+
     function setQuestion() {
     
         //use if statement so question only pops up if there are more questions
@@ -90,26 +92,24 @@ function startGame() {
     }
     setQuestion();
     button.onclick = startGame;
-}
 
-
-//function compareAnswer() fires any time you press any 4 answer. 
+    //function compareAnswer() fires any time you press any 4 answer. 
     //when click one it fires and compares text from button blicked to the answer (if statement).
-var answers = document.getElementsByClassName("choice");
-for (let k = 0; k < answers.length; k++) {
-    answers[k].addEventListener("click", function() {
-        //check answer. if right, then move on, else deduct 10 seconds
-        var userValue = event.target.value 
-        var answer = questions[i].answer;
-        if (userValue == answer) {
-            setQuestion();
-            //add to user score
-        } else {
-            startTime = startTime - 10;
-        }
-    })
+    var answers = document.getElementsByClassName("choice");
+    for (let k = 0; k < answers.length; k++) {
+        answers[k].addEventListener("click", function() {
+            //check answer. if right, then move on, else deduct 10 seconds
+            var userValue = event.target.value 
+            var answer = questions[i].answer;
+            if (userValue == answer) {
+                setQuestion();
+                //add to user score
+            } else {
+                startTime = startTime - 10;
+            }
+        });
+    }
 }
-
 
 //event listeners
 button.addEventListener("click", startGame)
