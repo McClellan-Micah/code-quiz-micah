@@ -88,7 +88,7 @@ function setQuestion() {
         choice2.textContent = questions[i].choice2;
         choice3.textContent = questions[i].choice3;
         choice4.textContent = questions[i].choice4;
-        i++
+        
     } else {
         for (x=0; x < 4; x++) {
             choices[x].classList.add("hidden");
