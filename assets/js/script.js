@@ -62,39 +62,41 @@ function startGame() {
     title.style.display = "none";
     intro.style.display = "none";
     // choice1.style.display = "block"; 
-    // choice2.style.display = "block";
-    // choice3.style.display = "block";
+    // choice2.style.display = "flex, center";
+    // choice3.style.display = "flex, center";
     // choice4.style.display = "block";
+}
 
-    function setQuestion() {
+function setQuestion() {
     
-        //use if statement so question only pops up if there are more questions
-        if (i < questions.length) {
-    
-        //here we are removing the hidden class and setting the text for the question 
-        question.textContent = questions[i].question
-            for (x=0; x < 4; x++) {
-                choices[x].classList.remove("hidden");
-            }
-            
-            choice1.textContent = questions[i].choice1;
-            choice2.textContent = questions[i].choice2;
-            choice3.textContent = questions[i].choice3;
-            choice4.textContent = questions[i].choice4;
+    //use if statement so question only pops up if there are more questions
+    if (i < questions.length) {
 
-            i++
-        } else {
-            for (x=0; x < 4; x++) {
-                choices[x].classList.add("hidden");
-            }
-        question.textContent = "Finito";
+    //here we are removing the hidden class and setting the text for the question 
+    question.textContent = questions[i].question
+        for (x=0; x < 4; x++) {
+            choices[x].classList.remove("hidden");
         }
-    }
-    setQuestion();
-    button.onclick = startGame;
+        
+        choice1.textContent = questions[i].choice1;
+        choice2.textContent = questions[i].choice2;
+        choice3.textContent = questions[i].choice3;
+        choice4.textContent = questions[i].choice4;
 
-    //function compareAnswer() fires any time you press any 4 answer. 
+        i++
+    } else {
+        for (x=0; x < 4; x++) {
+            choices[x].classList.add("hidden");
+        }
+    question.textContent = "Finito";
+    }
+}
+
+button.onclick = startGame;
+
+//function compareAnswer() fires any time you press any 4 answer. 
     //when click one it fires and compares text from button blicked to the answer (if statement).
+function compareAnswer () {
     var answers = document.getElementsByClassName("choice");
     for (let k = 0; k < answers.length; k++) {
         answers[k].addEventListener("click", function() {
@@ -112,9 +114,9 @@ function startGame() {
 }
 
 //event listeners
-button.addEventListener("click", startGame)
+button.addEventListener("click", setQuestion)
 //event listers for each choice button
-button.addEventListener("click", choice1)
-button.addEventListener("click", choice2)
-button.addEventListener("click", choice3)
-button.addEventListener("click", choice4)
+choice1.addEventListener("click", compareAnswer)
+choice2.addEventListener("click", compareAnswer)
+choice3.addEventListener("click", compareAnswer)
+choice4.addEventListener("click", compareAnswer)
