@@ -32,7 +32,7 @@ var questions = [
     choice2: 'Cascading Style Sheets',
     choice3: 'HyperText Markup Language',
     choice4: 'Document Object Model',
-    answer: 'Javascript'}// compare to the string OR the value of the button
+    answer: 'Javascript'} // compare to the string OR the value of the button
 ]
 
 var question = document.getElementById("question")
@@ -103,21 +103,17 @@ button.onclick = startGame;
     //when click one it fires and compares text from button blicked to the answer (if statement).
 function compareAnswer () { //console log to test if working
     var answers = document.getElementsByClassName("choice");
-    for (let i = 0; i < answers.length; i++) {
-        answers[i].addEventListener("click", function() {
-            //check answer. if right, then move on, else deduct 10 seconds
-            var userValue = event.target.value 
-            //console.log(userValue)
-            var answer = questions[i].answer;
-            console.log(answer)
-            if (userValue == answer) {
-                setQuestion();
-                //add to user score
-            } else {
-                startTime = startTime - 10;
-            }
-        });
-    } 
+    //check answer. if right, then move on, else deduct 10 seconds
+    var userValue = event.target.value 
+    //console.log(userValue)
+    var answer = questions[i].answer;
+    console.log(answer)
+    if (userValue == answer) {
+        setQuestion();
+        //add to user score
+    } else {
+        startTime = startTime - 10;
+    }
 }
 
 
