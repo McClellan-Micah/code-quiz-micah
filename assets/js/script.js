@@ -32,7 +32,7 @@ var questions = [
     choice2: 'Cascading Style Sheets',
     choice3: 'HyperText Markup Language',
     choice4: 'Document Object Model',
-    answer: 'Javascript'} 
+    answer: 'JavaScript'} 
 ]
 
 var question = document.getElementById("question")
@@ -55,7 +55,7 @@ function myTimer() {
             timerEl.style.color = "red";
             clearInterval(timeInterval);
 
-            //call endGame();
+            endGame();
         }
 
         // else if(startTime <= 0){
@@ -105,8 +105,7 @@ function setQuestion() {
         for (x=0; x < questions.length; x++) {
             choices[x].classList.add("hidden");
         }
-    question.textContent = "Finito";
-    //call endGame();
+    endGame();
     }
 }
 
@@ -132,7 +131,6 @@ function compareAnswer() { //console log to test if working
         console.log("Correct ");
         i++;
         setQuestion();
-        
     }
     else{
         console.log("Incorrect -10s");
@@ -141,8 +139,18 @@ function compareAnswer() { //console log to test if working
 }
 
 function endGame() {
-    //when all questions are answered, user is prompted to enter their initials. initials and score are saved to localStorage
-    //will call within else statement of setQuestion AND when timer runs out
+    question.textContent = "Finito";
+    //hide buttons
+    choice1.style.display = "none";
+    choice2.style.display = "none";
+    choice3.style.display = "none";
+    choice4.style.display = "none";
+    //when all questions are answered, user is prompted to enter their initials. 
+    var initials = window.prompt("Enter your initials");
+    console.log("Initials: " + initials);
+    //console log 'time left' when endGame is called
+
+    //send initials and 'time left' (aka score) to local storage
 }
 
 //eventlistener 'Start Quiz'
