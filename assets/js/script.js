@@ -96,9 +96,10 @@ function setQuestion() {
         choice2.textContent = questions[i].choice2;
         choice3.textContent = questions[i].choice3;
         choice4.textContent = questions[i].choice4;
-
+        
         //Then we want to generate new question when our answer is correct.
-        //Thien we will use a boolean comparator function (call setquestion() again)
+        
+        //Then we will use a boolean comparator function (call setquestion() again)
         
     } else {
         for (x=0; x < questions.length; x++) {
@@ -128,8 +129,9 @@ function compareAnswer() { //console log to test if working
         correctAnswer = true;
     }
     if(correctAnswer){
-    console.log("Correct ");
-    setQuestion();
+        console.log("Correct ");
+        //setQuestion();
+        
     }
     else{
         console.log("Incorrect -10s");
