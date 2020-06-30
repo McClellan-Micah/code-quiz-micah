@@ -56,6 +56,7 @@ function myTimer() {
             timerEl.textContent = "FATALITY"
             timerEl.style.color = "red";
             clearInterval(timeInterval);
+            //call endGame();
         }
         //Subtracts 1 from the start time
         startTime--;
@@ -94,6 +95,7 @@ function setQuestion() {
             choices[x].classList.add("hidden");
         }
     question.textContent = "Finito";
+    //call endGame();
     }
 }
 
@@ -101,7 +103,7 @@ button.onclick = startGame;
 
 //function compareAnswer() fires any time you press any 4 answer. 
     //when click one it fires and compares text from button blicked to the answer (if statement).
-function compareAnswer () { //console log to test if working
+function compareAnswer() { //console log to test if working
     var answers = document.getElementsByClassName("choice");
     //check answer. if right, then move on, else deduct 10 seconds
     var userValue = event.target.value; //.toString(); ????
@@ -116,6 +118,10 @@ function compareAnswer () { //console log to test if working
     }
 }
 
+function endGame() {
+    //when all questions are answered, user is prompted to enter their initials. initials and score are saved to localStorage
+    //will call within else statement of setQuestion AND when timer runs out
+}
 
 //eventlistener 'Start Quiz'
 button.addEventListener("click", setQuestion)
