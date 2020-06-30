@@ -1,9 +1,7 @@
 var timerEl = document.getElementById("timer")
 var button = document.getElementById("startButton")
-
 var intro = document.getElementById("intro")
 var title = document.getElementById("title")
-//var choice = document.getElementById("choice")
 
 var questions = [
     { question: 'What is HTML?',
@@ -43,6 +41,11 @@ var choice4 = document.getElementById("choice4")
 
 var choices = document.querySelectorAll(".choice")
 
+choice1.style.display = "none"; 
+choice2.style.display = "none";
+choice3.style.display = "none";
+choice4.style.display = "none";
+
 var i = 0
 
 var startTime = 75;
@@ -54,10 +57,8 @@ function myTimer() {
             timerEl.textContent = "FATALITY"
             timerEl.style.color = "red";
             clearInterval(timeInterval);
-
             endGame();
         }
-
         //Subtracts 1 from the start time
         startTime--;
     }, 1000);
@@ -68,17 +69,15 @@ function startGame() {
     button.style.display = "none";
     title.style.display = "none";
     intro.style.display = "none";
-    //attempt to remove button from initial screen
-        // choice1.style.display = ""; 
-        // choice2.style.display = "";
-        // choice3.style.display = "";
-        // choice4.style.display = "";
+    choice1.style.display = "block"; 
+    choice2.style.display = "block";
+    choice3.style.display = "block";
+    choice4.style.display = "block";
 }
 
 function setQuestion() {
     //use if statement so question only pops up if there are more questions
     if (i < questions.length) {
-
     //here we are removing the hidden class and setting the text for the question 
     question.textContent = questions[i].question
        //We want to loop through all the questions using questions.length
@@ -90,7 +89,6 @@ function setQuestion() {
         choice2.textContent = questions[i].choice2;
         choice3.textContent = questions[i].choice3;
         choice4.textContent = questions[i].choice4;
-        
     } else {
         for (x=0; x < questions.length; x++) {
             choices[x].classList.add("hidden");
@@ -104,14 +102,12 @@ button.onclick = startGame;
 //function compareAnswer() fires any time you press any 4 answer. 
     //when click one it fires and compares text from button clicked to the answer (if statement).
 function compareAnswer() { 
-    //var answers = document.getElementsByClassName("choice");               //prob excessive code
     var userValue = event.target.value; 
     //console.log(userValue);
     var userAnswer = questions[i] ["choice" + userValue];
     var quizAnswer = questions[i].answer;
     // console.log("userAnswer: " + userAnswer);
     // console.log("quizAnswer: " + quizAnswer);
-
     var correctAnswer = false;
     if(userAnswer == quizAnswer){
         correctAnswer = true;
@@ -138,8 +134,7 @@ function endGame() {
     //when all questions are answered, user is prompted to enter their initials. 
     var initials = window.prompt("Enter your initials");
     console.log("Initials: " + initials);
-    //console log 'time left' when endGame is called
-    
+    //stop timer when endGame() is called
     //send initials and 'time left' (aka score) to local storage
 }
 

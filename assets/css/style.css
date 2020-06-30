@@ -67,6 +67,7 @@ p {
     padding: 5px 15px;
     font-size: 2rem;
     border-radius: 12px;
+    margin: 5px;
 }
 
 .choice:hover {
