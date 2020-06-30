@@ -32,7 +32,7 @@ var questions = [
     choice2: 'Cascading Style Sheets',
     choice3: 'HyperText Markup Language',
     choice4: 'Document Object Model',
-    answer: 'Javascript'} // compare to the string OR the value of the button
+    answer: 'Javascript'} 
 ]
 
 var question = document.getElementById("question")
@@ -47,51 +47,61 @@ var i = 0
 
 var startTime = 75;
 
-//write functions
 function myTimer() {
-    //set variables
     var timeInterval = setInterval(() => {
         timerEl.textContent = "Time left: " + startTime;
-        if (startTime === 0) {
+        if (startTime <= 0) {
             timerEl.textContent = "FATALITY"
             timerEl.style.color = "red";
             clearInterval(timeInterval);
+
             //call endGame();
         }
+
+        // else if(startTime <= 0){
+        //     // show end screen
+        //     var endScreenEl = document.getElementsByClassName("end-game"); //probably delete whole 'else if' statement
+        //     endScreenEl.removeAttribute("class");
+        // }
+
         //Subtracts 1 from the start time
         startTime--;
     }, 1000);
 }
 
 function startGame() {
-    //call timer
-    myTimer();
+    myTimer(); //call timer
     button.style.display = "none";
     title.style.display = "none";
     intro.style.display = "none";
-    // choice1.style.display = "block"; 
-    // choice2.style.display = "flex, center";
-    // choice3.style.display = "flex, center";
-    // choice4.style.display = "block";
+    //attempt to remove button from initial screen
+        // choice1.style.display = ""; 
+        // choice2.style.display = "";
+        // choice3.style.display = "";
+        // choice4.style.display = "";
 }
 
 function setQuestion() {
-    
     //use if statement so question only pops up if there are more questions
     if (i < questions.length) {
 
     //here we are removing the hidden class and setting the text for the question 
     question.textContent = questions[i].question
-        for (x=0; x < 4; x++) {
+       //We want to loop through all the questions using questions.length
+        for (x=0; x < questions.length; x++) {
             choices[x].classList.remove("hidden");
         }
+        //Shows the text content of the current question.
         choice1.textContent = questions[i].choice1;
         choice2.textContent = questions[i].choice2;
         choice3.textContent = questions[i].choice3;
         choice4.textContent = questions[i].choice4;
+
+        //Then we want to generate new question when our answer is correct.
+        //Thien we will use a boolean comparator function (call setquestion() again)
         
     } else {
-        for (x=0; x < 4; x++) {
+        for (x=0; x < questions.length; x++) {
             choices[x].classList.add("hidden");
         }
     question.textContent = "Finito";
@@ -106,16 +116,25 @@ button.onclick = startGame;
 function compareAnswer() { //console log to test if working
     var answers = document.getElementsByClassName("choice");
     //check answer. if right, then move on, else deduct 10 seconds
-    var userValue = event.target.value; //.toString(); ????
-    console.log(userValue)
-    var answer = questions[i].answer;
-    console.log(answer)
-    if (userValue == answer) {
-        setQuestion();
-        //add to user score
-    } else {
-        startTime = startTime - 10;
+    var userValue = event.target.value; 
+    //console.log(userValue);
+    var userAnswer = questions[i] ["choice" + userValue];
+    var quizAnswer = questions[i].answer;
+    // console.log("userAnswer: " + userAnswer);
+    // console.log("quizAnswer: " + quizAnswer);
+
+    var correctAnswer = false;
+    if(userAnswer == quizAnswer){
+        correctAnswer = true;
     }
+    if(correctAnswer){
+    console.log("Correct ");
+    setQuestion();
+    }
+    else{
+        console.log("Incorrect -10s");
+        startTime = startTime - 10;
+    } 
 }
 
 function endGame() {
