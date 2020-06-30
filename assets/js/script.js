@@ -21,10 +21,10 @@ var questions = [
     answer: 'Cascading Style Sheets'},
 
     { question: 'What is DOM?',
-    choice1: 'JavaScript',
+    choice1: 'Document Object Model',
     choice2: 'Cascading Style Sheets',
-    choice3: 'HyperText Markup Language',
-    choice4: 'Document Object Model',
+    choice3: 'JavaScript',
+    choice4: 'HyperText Markup Language',
     answer: 'Document Object Model'},
     
     { question: 'What is JS?',
@@ -57,12 +57,6 @@ function myTimer() {
 
             endGame();
         }
-
-        // else if(startTime <= 0){
-        //     // show end screen
-        //     var endScreenEl = document.getElementsByClassName("end-game"); //probably delete whole 'else if' statement
-        //     endScreenEl.removeAttribute("class");
-        // }
 
         //Subtracts 1 from the start time
         startTime--;
@@ -97,10 +91,6 @@ function setQuestion() {
         choice3.textContent = questions[i].choice3;
         choice4.textContent = questions[i].choice4;
         
-        //Then we want to generate new question when our answer is correct.
-        
-        //Then we will use a boolean comparator function (call setquestion() again)
-        
     } else {
         for (x=0; x < questions.length; x++) {
             choices[x].classList.add("hidden");
@@ -112,10 +102,9 @@ function setQuestion() {
 button.onclick = startGame;
 
 //function compareAnswer() fires any time you press any 4 answer. 
-    //when click one it fires and compares text from button blicked to the answer (if statement).
-function compareAnswer() { //console log to test if working
-    var answers = document.getElementsByClassName("choice");
-    //check answer. if right, then move on, else deduct 10 seconds
+    //when click one it fires and compares text from button clicked to the answer (if statement).
+function compareAnswer() { 
+    //var answers = document.getElementsByClassName("choice");               //prob excessive code
     var userValue = event.target.value; 
     //console.log(userValue);
     var userAnswer = questions[i] ["choice" + userValue];
@@ -133,6 +122,7 @@ function compareAnswer() { //console log to test if working
         setQuestion();
     }
     else{
+        //deduct 10seconds if wrong answer
         console.log("Incorrect -10s");
         startTime = startTime - 10;
     } 
@@ -149,7 +139,7 @@ function endGame() {
     var initials = window.prompt("Enter your initials");
     console.log("Initials: " + initials);
     //console log 'time left' when endGame is called
-
+    
     //send initials and 'time left' (aka score) to local storage
 }
 
