@@ -130,7 +130,8 @@ function compareAnswer() { //console log to test if working
     }
     if(correctAnswer){
         console.log("Correct ");
-        //setQuestion();
+        i++;
+        setQuestion();
         
     }
     else{
