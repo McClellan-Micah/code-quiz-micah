@@ -104,8 +104,8 @@ button.onclick = startGame;
 function compareAnswer () { //console log to test if working
     var answers = document.getElementsByClassName("choice");
     //check answer. if right, then move on, else deduct 10 seconds
-    var userValue = event.target.value 
-    //console.log(userValue)
+    var userValue = event.target.value; //.toString(); ????
+    console.log(userValue)
     var answer = questions[i].answer;
     console.log(answer)
     if (userValue == answer) {
