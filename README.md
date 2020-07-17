@@ -16,5 +16,5 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 
-
+# Link to deployed application: https://mcclellan-micah.github.io/code-quiz-micah/
 
